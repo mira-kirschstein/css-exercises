@@ -8,35 +8,48 @@ body {
   font-weight: 800;
 }
 
-.small-para {
-  font-size: 14px;
-  font-weight: 800;
-}
-
 .para {
   font-size: 22px;
 }
 
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
+/* .small-para muss hinter .para damit es 
+später gelesen wird und somit eine höhrere Priorität hat */
+
+.small-para {
+  font-size: 14px;
+  font-weight: 800;
+}
 
 .button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
-
-.child {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  font-size: 14px;
-}
+/* Auch confirm muss hinter Button, damit es später gelesen wird
+und eine höhere Prio hat, weil beie auf dem gleichen Level sind
+Andere Möglichkeit: 
+      anstelle ID benutzen mit #confirm-button
+      oder .button.confirm*/
+.confirm {
+  background: green;
+  color: white;
+  font-weight: bold;
+} 
 
 div.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
 }
+
+/* es musste das .child und div.text getan werdden und dann
+ein div dem .child hinzugefügt werden, damit sie auf dem selben Level
+Sind, aber wegen der Reihenfolge div .child gewinnt */
+
+div .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+
